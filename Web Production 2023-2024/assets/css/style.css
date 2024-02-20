@@ -4,7 +4,7 @@
   object-fit: cover;
   animation-iteration-count:2;
   animation-fill-mode:forwards;
-  animation:pop-in 2s ease-in-out;
+  animation:pop-in 5s ease-in-out;
 
 }
   /* ul{
@@ -16,7 +16,7 @@
     min-height: 100%;
     padding-left:5%;
     padding-right:5%;
-    animation: pop-in 2s ease-in-out
+    animation: drop-in 2s ease-out
   }
   .splide__slide {
     opacity: 0.6;
@@ -26,9 +26,31 @@
     opacity: 1;
   }
   #thumbnail-carousel li.splide_slide{
-    animation: pop-in 2s ease-in-out;
+    animation: slide-in 1000ms;
+    animation-timing-function: linear;
   }
   @keyframes pop-in{
     0% { opacity: 0; transform: scale(0.1); }
     100% { opacity: 1; transform: scale(1); }
 }
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes drop-in {
+  from {
+    transform:
+      rotate(-30deg) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform:
+      rotate(0deg) translateY(0%);
+    opacity: 1;
+  }
+}
+
